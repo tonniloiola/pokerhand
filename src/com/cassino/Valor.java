@@ -13,7 +13,9 @@ public enum Valor {
 		if (v.equals("2") || v.equals("3") || v.equals("4") || v.equals("5") || v.equals("6") || v.equals("7") || v.equals("8") || v.equals("9") || v.equals("10") || v.equals("11") || v.equals("12") || v.equals("13") || v.equals("14")) {
 			value = Integer.parseInt(v);
 		} else {
-			if (v.equals("J")) {
+			if (v.equals("T")) {
+				value = 10;
+			} else if (v.equals("J")) {
 				value = 11;
 			} else if (v.equals("Q")) {
 				value = 12;

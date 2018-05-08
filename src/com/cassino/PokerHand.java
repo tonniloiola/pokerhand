@@ -23,8 +23,8 @@ public class PokerHand {
 
 	public Resultado compareWith(PokerHand anotherPokerHand) {
 		
-//		double rankingThis = this.getRanking();
-//		double anotherHand = anotherPokerHand.getRanking();
+		double rankingThis = this.getRanking();
+		double anotherHand = anotherPokerHand.getRanking();
 		
         int retval = Double.compare(this.getRanking(), anotherPokerHand.getRanking());
 		
@@ -103,6 +103,7 @@ public class PokerHand {
     
     public double isFlush() {
         double result = 0.0;
+        boolean isFlush = true;
         
         String suit = suits[0];
         
@@ -111,7 +112,12 @@ public class PokerHand {
 
             if (suits[i].equals(suit) == false) {
                 result = 0.0;
+                isFlush = false;
             }
+        }
+        
+        if(!isFlush) {
+        	result = 0.0;
         }
         
         return result;
@@ -119,7 +125,7 @@ public class PokerHand {
 	
 	public double getRanking() {
         double ranking = 0;
-//        
+        
         if (isMaior(isStraightFlush(), 8.0)) {
         	if(isRoyalFlush()) {
         		ranking = 9.0;
